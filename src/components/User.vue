@@ -36,7 +36,7 @@ export default {
         }
     },
     created(){
-      this.$html.get('https://jsonplaceholder.typicode.com/users')
+      this.$http.get('https://jsonplaceholder.typicode.com/users')
         .then(res => this.users = res.body);
     }
 }
