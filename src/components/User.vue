@@ -22,23 +22,7 @@
 export default {
     data(){
         return{
-            users: [
-              {
-                  name:'Jose',
-                  Apellido:'Sanchez',
-                  contac:false
-              },
-              {
-                  name:'Pedro',
-                  Apellido:'Sanchez',
-                  contac:false
-              },  
-              {
-                  name:'Juan',
-                  Apellido:'Sanchez',
-                  contac:false
-              }    
-            ],
+            users: [],
             newUser:{}
         }
     },
@@ -50,6 +34,10 @@ export default {
         deleteUser(user){
           this.users.splice(this.users.indexOf(user), 1);
         }
+    },
+    created(){
+      this.$html.get('https://jsonplaceholder.typicode.com/users')
+        .then(res => this.users = res.body);
     }
 }
 

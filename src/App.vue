@@ -3,6 +3,8 @@
     
     <h1>Bienvenidos</h1>
     <User></User>
+     
+
     
   </div>
 </template>
