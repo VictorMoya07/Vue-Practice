@@ -3,12 +3,15 @@
     
     <ul class="color">
         <li v-for="user in users">
-            {{user.name}} - {{user.Apellido}}
+            {{user.name}} - {{user.Apellido}} 
+            <button v-on:click="deleteUser(user)">X</button>
         </li>
 
     </ul>
-     <form>
-
+     <form v-on:submit.prevent="addNewUser" >
+       <input type="text" v-model ="newUser.name" placeholder="Agrege un Nombre" >
+       <input type="text" v-model ="newUser.Apellido" placeholder="Agrege un Apellido" >
+        <button type="submit">ADD</button>
      </form>
     
     </div>
@@ -26,28 +29,33 @@ export default {
                   contac:false
               },
               {
-                  name:'Jose',
+                  name:'Pedro',
                   Apellido:'Sanchez',
                   contac:false
               },  
               {
-                  name:'Jose',
+                  name:'Juan',
                   Apellido:'Sanchez',
                   contac:false
               }    
-            ]
+            ],
+            newUser:{}
         }
     },
     methods:{
         addNewUser(){
-
+          this.users.push(this.newUser);
+          this.newUser = {};
+        },
+        deleteUser(user){
+          this.users.splice(this.users.indexOf(user), 1);
         }
     }
 }
 
 </script>
 
-<style media="screen">
+<style lang="css">
     .color{
         background:brown;
         color:aliceblue;
