@@ -12,6 +12,7 @@
        <input type="text" v-model ="newUser.name" placeholder="Agrege un Nombre" >
        <input type="text" v-model ="newUser.Apellido" placeholder="Agrege un Apellido" >
         <button type="submit">ADD</button>
+        
      </form>
     
     </div>

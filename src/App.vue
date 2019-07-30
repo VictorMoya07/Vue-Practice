@@ -1,11 +1,25 @@
 <template>
   <div id="app">
-    
-    <h1>Bienvenidos</h1>
-    <User></User>
-     
 
-    
+    <h1>Bienvenidos</h1>
+    <nav>
+      <ul>
+        <li>
+          <router-link to="/test">
+            Test
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/">
+            User
+          </router-link>
+        </li>
+
+      </ul>
+    </nav>
+    <router-view></router-view>
+
+
   </div>
 </template>
 
@@ -14,7 +28,7 @@
 import Test from './components/Test.vue';
 import User from './components/User.vue';
 export default {
-  
+
   name: 'App',
   components: {
     Test,
